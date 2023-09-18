@@ -2443,7 +2443,7 @@ var require_io = __commonJS({
     var assert_1 = __require("assert");
     var path2 = __importStar(__require("path"));
     var ioUtil = __importStar(require_io_util());
-    function cp(source, dest, options = {}) {
+    function cp2(source, dest, options = {}) {
       return __awaiter(this, void 0, void 0, function* () {
         const { force, recursive, copySourceDirectory } = readCopyOptions(options);
         const destStat = (yield ioUtil.exists(dest)) ? yield ioUtil.stat(dest) : null;
@@ -2469,8 +2469,8 @@ var require_io = __commonJS({
         }
       });
     }
-    exports.cp = cp;
-    function mv2(source, dest, options = {}) {
+    exports.cp = cp2;
+    function mv(source, dest, options = {}) {
       return __awaiter(this, void 0, void 0, function* () {
         if (yield ioUtil.exists(dest)) {
           let destExists = true;
@@ -2490,7 +2490,7 @@ var require_io = __commonJS({
         yield ioUtil.rename(source, dest);
       });
     }
-    exports.mv = mv2;
+    exports.mv = mv;
     function rmRF(inputPath) {
       return __awaiter(this, void 0, void 0, function* () {
         if (ioUtil.IS_WINDOWS) {
@@ -2926,7 +2926,7 @@ async function main() {
     const { cachePath, targetDir, targetPath, options } = getVars();
     if (await (0, import_io_util.exists)(cachePath)) {
       await (0, import_io.mkdirP)(targetDir);
-      await (0, import_io.mv)(cachePath, targetPath, { force: true });
+      await (0, import_io.cp)(cachePath, targetPath, { force: true, recursive: true });
       log_default.info(`Cache found and restored to ${options.path}`);
       (0, import_core.setOutput)("cache-hit", true);
     } else {
