@@ -2926,7 +2926,11 @@ async function main() {
     const { cachePath, targetDir, targetPath, options } = getVars();
     if (await (0, import_io_util.exists)(cachePath)) {
       await (0, import_io.mkdirP)(targetDir);
-      await (0, import_io.cp)(cachePath, targetPath, { force: true, recursive: true });
+      await (0, import_io.cp)(cachePath, targetPath, {
+        force: true,
+        recursive: true,
+        copySourceDirectory: false
+      });
       log_default.info(`Cache found and restored to ${options.path}`);
       (0, import_core.setOutput)("cache-hit", true);
     } else {

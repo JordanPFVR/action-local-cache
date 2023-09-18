@@ -13,7 +13,11 @@ async function main(): Promise<void> {
     if (await exists(cachePath)) {
       await mkdirP(targetDir);
       // copy contents for the cache directory, into the target directory
-      await cp(cachePath, targetPath, { force: true, recursive: true, copySourceDirectory: false });
+      await cp(cachePath, targetPath, {
+        force: true,
+        recursive: true,
+        copySourceDirectory: false,
+      });
       log.info(`Cache found and restored to ${options.path}`);
       setOutput("cache-hit", true);
     } else {
