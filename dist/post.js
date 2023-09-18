@@ -2870,10 +2870,14 @@ var { GITHUB_REPOSITORY, RUNNER_TOOL_CACHE } = process.env;
 var CWD = process.cwd();
 var getVars = () => {
   if (!RUNNER_TOOL_CACHE) {
-    throw new TypeError("Expected RUNNER_TOOL_CACHE environment variable to be defined.");
+    throw new TypeError(
+      "Expected RUNNER_TOOL_CACHE environment variable to be defined."
+    );
   }
   if (!GITHUB_REPOSITORY) {
-    throw new TypeError("Expected GITHUB_REPOSITORY environment variable to be defined.");
+    throw new TypeError(
+      "Expected GITHUB_REPOSITORY environment variable to be defined."
+    );
   }
   const options = {
     key: core.getInput("key") || "no-key",

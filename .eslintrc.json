@@ -1,14 +1,6 @@
 {
   "plugins": ["jest", "@typescript-eslint"],
   "extends": [
-    "@masterworks/eslint-config-masterworks/base",
-    "@masterworks/eslint-config-masterworks/node",
-    "@masterworks/eslint-config-masterworks/modern",
-    "@masterworks/eslint-config-masterworks/modules",
-    "@masterworks/eslint-config-masterworks/stylish",
-    "@masterworks/eslint-config-masterworks/typescript",
-    "@masterworks/eslint-config-masterworks/typescript-strict",
-    "@masterworks/eslint-config-masterworks/typescript-stylish"
   ],
   "env": {
     "es6": true,

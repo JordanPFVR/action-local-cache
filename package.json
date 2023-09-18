@@ -7,7 +7,6 @@
   "engines": {
     "node": "^18.12.0"
   },
-  "prettier": "@masterworks/eslint-config-masterworks/prettier",
   "scripts": {
     "all": "npm run format && npm run lint && npm run typecheck && npm run pack && npm test",
     "format-check": "prettier --check **/*.ts",
@@ -19,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MasterworksIO/action-local-cache.git"
+    "url": "git+https://github.com/JordanPFVR/action-local-cache.git"
   },
   "keywords": [
     "actions",
@@ -35,7 +34,6 @@
     "loglevel": "1.8.1"
   },
   "devDependencies": {
-    "@masterworks/eslint-config-masterworks": "github:MasterworksIO/eslint-config-masterworks#2.1.1",
     "@types/jest": "29.5.3",
     "@types/node": "18.16.19",
     "@typescript-eslint/eslint-plugin": "5.62.0",
